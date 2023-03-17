@@ -1,0 +1,27 @@
+{
+    "name": "cypress-boilerplate",
+    "version": "1.0.0",
+    "main": "index.js",
+    "repository": "https://github.com/ivasholeksii/cypress-boilerplate.git",
+    "author": "Oleksii Ivashchenko <oleksii.ivashchenko[at]gmail.com>",
+    "license": "MIT",
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^5.55.0",
+        "@typescript-eslint/parser": "^5.55.0",
+        "cypress": "^12.8.1",
+        "eslint": "^8.36.0",
+        "eslint-plugin-cypress": "^2.12.1",
+        "husky": "^8.0.3",
+        "lint-staged": "^13.2.0",
+        "prettier": "2.8.4",
+        "typescript": "^5.0.2"
+    },
+    "scripts": {
+        "postinstall": "husky install",
+        "prepare": "husky install",
+        "lint": "eslint --fix --ext .js,.jsx ."
+    },
+    "lint-staged": {
+        "**/*": "prettier --write --ignore-unknown"
+    }
+}
