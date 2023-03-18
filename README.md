@@ -27,7 +27,9 @@ Install dependencies: `yarn install`
 
 ## Usage
 
-To run Cypress tests in interactive mode: `yarn run cypress open`
+To run Cypress tests in interactive mode: `yarn open-cypress`
+
+To run Cypress test in CLI mode: `yarn test`
 
 To lint your code using ESLint: `yarn lint`
 

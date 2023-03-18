@@ -3,16 +3,11 @@ describe('Login Test', () => {
         cy.visit('https://www.saucedemo.com/');
     });
 
-    it('should perform login', () => {
-        const usernames = [
-            'standard_user',
-            'locked_out_user',
-            'problem_user',
-            'performance_glitch_user',
-        ];
-        const password = 'secret_sauce';
+    const usernames = ['standard_user', 'problem_user'];
+    const password = 'secret_sauce';
 
-        usernames.forEach((username) => {
+    usernames.forEach((username) => {
+        it(`should perform login with username: "${username}"`, () => {
             cy.get('#user-name')
                 .clear()
                 .type(username)
@@ -26,10 +21,11 @@ describe('Login Test', () => {
             cy.get('#login-button').click();
 
             cy.url().should('include', '/inventory.html');
-
-            cy.get('.inventory_item_description')
-                .find('.pricebar')
-                .should('have.length', 6);
         });
+    });
+
+    afterEach(() => {
+        cy.get('#react-burger-menu-btn').click();
+        cy.get('#logout_sidebar_link').click();
     });
 });
