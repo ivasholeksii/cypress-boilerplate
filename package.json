@@ -17,6 +17,8 @@
         "typescript": "^5.0.2"
     },
     "scripts": {
+        "test": "npx cypress run",
+        "open-cypress": "cypress open",
         "postinstall": "husky install",
         "prepare": "husky install",
         "lint": "eslint --fix --ext .js,.jsx ."
